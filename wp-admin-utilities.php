@@ -43,7 +43,11 @@ function basic_plugin_page_content()
 	?>
 	<div class="wrap">
 		<h1>Basic Plugin Page</h1>
+		<div class="notice notice-success inline">
+			<p>Settings saved successfully! (Example notice)</p>
+		</div>
 		<p>Welcome to the basic plugin settings.</p>
 	</div>
+
 	<?php
 }
