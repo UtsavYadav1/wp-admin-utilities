@@ -43,26 +43,26 @@ function basic_plugin_page_content()
 	// Handle Submission
 	if (isset($_POST['submit'])) {
 		// Verify Nonce
-		check_admin_referer('basic_plugin_save_action', 'basic_plugin_nonce');
+		check_admin_referer('ayu_admin_utilities_save_action', 'ayu_admin_utilities_nonce');
 
-		$value = sanitize_text_field($_POST['basic_plugin_option']);
-		update_option('basic_plugin_option', $value);
+		$value = sanitize_text_field($_POST['ayu_admin_utilities_option']);
+		update_option('ayu_admin_utilities_option', $value);
 		echo '<div class="notice notice-success is-dismissible"><p>Settings saved.</p></div>';
 	}
 
 	// Retrieve Value
-	$value = get_option('basic_plugin_option', '');
+	$value = get_option('ayu_admin_utilities_option', '');
 	?>
 	<div class="wrap">
 		<h1>Basic Plugin Page</h1>
 		<p>Welcome to the basic plugin settings.</p>
 
 		<form method="post" action="">
-			<?php wp_nonce_field('basic_plugin_save_action', 'basic_plugin_nonce'); ?>
+			<?php wp_nonce_field('ayu_admin_utilities_save_action', 'ayu_admin_utilities_nonce'); ?>
 			<table class="form-table">
 				<tr valign="top">
 					<th scope="row">Option Name</th>
-					<td><input type="text" name="basic_plugin_option" value="<?php echo esc_attr($value); ?>" /></td>
+					<td><input type="text" name="ayu_admin_utilities_option" value="<?php echo esc_attr($value); ?>" /></td>
 				</tr>
 			</table>
 			<p class="submit">
