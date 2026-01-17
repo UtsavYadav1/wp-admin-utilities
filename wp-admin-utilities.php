@@ -23,3 +23,23 @@ function basic_plugin_activate()
 {
 	// Triggered on plugin activation
 }
+
+// Admin Menu
+add_action('admin_menu', 'basic_plugin_setup_menu');
+
+function basic_plugin_setup_menu()
+{
+	add_menu_page(
+		'Basic Plugin Page',      // Page Title
+		'Basic Plugin',           // Menu Title
+		'manage_options',         // Capability
+		'basic-plugin',           // Menu Slug
+		'basic_plugin_page_content' // Callback function
+	);
+}
+
+function basic_plugin_page_content()
+{
+	echo '<h1>Basic Plugin Page</h1>';
+	echo '<p>Welcome to the basic plugin settings.</p>';
+}
