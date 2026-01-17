@@ -47,6 +47,18 @@ function basic_plugin_page_content()
 			<p>Settings saved successfully! (Example notice)</p>
 		</div>
 		<p>Welcome to the basic plugin settings.</p>
+
+		<form method="post" action="">
+			<table class="form-table">
+				<tr valign="top">
+					<th scope="row">Option Name</th>
+					<td><input type="text" name="basic_plugin_option" value="" /></td>
+				</tr>
+			</table>
+			<p class="submit">
+				<input type="submit" name="submit" id="submit" class="button button-primary" value="Save Changes">
+			</p>
+		</form>
 	</div>
 
 	<?php
