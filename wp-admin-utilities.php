@@ -42,6 +42,9 @@ function basic_plugin_page_content()
 {
 	// Handle Submission
 	if (isset($_POST['submit'])) {
+		// Verify Nonce
+		check_admin_referer('basic_plugin_save_action', 'basic_plugin_nonce');
+
 		$value = sanitize_text_field($_POST['basic_plugin_option']);
 		update_option('basic_plugin_option', $value);
 		echo '<div class="notice notice-success is-dismissible"><p>Settings saved.</p></div>';
@@ -55,6 +58,7 @@ function basic_plugin_page_content()
 		<p>Welcome to the basic plugin settings.</p>
 
 		<form method="post" action="">
+			<?php wp_nonce_field('basic_plugin_save_action', 'basic_plugin_nonce'); ?>
 			<table class="form-table">
 				<tr valign="top">
 					<th scope="row">Option Name</th>
