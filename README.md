@@ -2,6 +2,16 @@
 
 A custom WordPress plugin built to demonstrate core plugin development concepts and best practices. This project focuses on creating a clean, secure, and functional admin interface using native WordPress APIs.
 
+## Why This Plugin Exists
+
+This plugin was created to showcase how a real-world WordPress admin plugin should be structured and developed.  
+Rather than focusing on feature count, the goal is to demonstrate **correct patterns**, **security practices**, and **clean development workflows** that are commonly expected in professional WordPress teams like rtCamp.
+
+It intentionally emphasizes:
+- Native WordPress APIs over custom implementations
+- Secure data handling and CSRF protection
+- Readable, maintainable, and incremental code changes
+
 ## Features
 
 - **Admin Menu Integration**: Adds a custom top-level menu page to the WordPress dashboard.
