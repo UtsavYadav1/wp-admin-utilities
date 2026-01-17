@@ -40,6 +40,10 @@ function basic_plugin_setup_menu()
 
 function basic_plugin_page_content()
 {
-	echo '<h1>Basic Plugin Page</h1>';
-	echo '<p>Welcome to the basic plugin settings.</p>';
+	?>
+	<div class="wrap">
+		<h1>Basic Plugin Page</h1>
+		<p>Welcome to the basic plugin settings.</p>
+	</div>
+	<?php
 }
