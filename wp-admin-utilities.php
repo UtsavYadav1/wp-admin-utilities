@@ -40,25 +40,32 @@ function basic_plugin_setup_menu()
 
 function basic_plugin_page_content()
 {
+	// Handle Submission
+	if (isset($_POST['submit'])) {
+		$value = sanitize_text_field($_POST['basic_plugin_option']);
+		update_option('basic_plugin_option', $value);
+		echo '<div class="notice notice-success is-dismissible"><p>Settings saved.</p></div>';
+	}
+
+	// Retrieve Value
+	$value = get_option('basic_plugin_option', '');
 	?>
 	<div class="wrap">
 		<h1>Basic Plugin Page</h1>
-		<div class="notice notice-success inline">
-			<p>Settings saved successfully! (Example notice)</p>
-		</div>
 		<p>Welcome to the basic plugin settings.</p>
 
 		<form method="post" action="">
 			<table class="form-table">
 				<tr valign="top">
 					<th scope="row">Option Name</th>
-					<td><input type="text" name="basic_plugin_option" value="" /></td>
+					<td><input type="text" name="basic_plugin_option" value="<?php echo esc_attr($value); ?>" /></td>
 				</tr>
 			</table>
 			<p class="submit">
 				<input type="submit" name="submit" id="submit" class="button button-primary" value="Save Changes">
 			</p>
 		</form>
+
 	</div>
 
 	<?php
