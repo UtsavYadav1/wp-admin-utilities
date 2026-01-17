@@ -12,6 +12,14 @@
  */
 
 // Prevent direct access to this file
-if ( ! defined( 'ABSPATH' ) ) {
+if (!defined('ABSPATH')) {
 	exit;
+}
+
+// Activation Hook
+register_activation_hook(__FILE__, 'basic_plugin_activate');
+
+function basic_plugin_activate()
+{
+	// Triggered on plugin activation
 }
